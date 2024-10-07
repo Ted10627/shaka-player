@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShakaPlayer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.11.7/dist/controls.min.css">
+  <!-- Your application source: -->
+  <script src="./myapp.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.11.7/dist/shaka-player.ui.min.js"></script>
+</head>
+
+<body>
+  <!-- controlsList="nodownload"禁止下載功能 -->
+  <video id="video" width="600" poster="//shaka-player-demo.appspot.com/assets/poster.jpg" controls
+    autoplay controlsList="nodownload">
+  </video>
+  <!-- 原生跳轉 -->
+  <div id="timeline-buttons">
+    <div>
+      <button class="jump-button" onclick="jumpTo(20)">課程前導(0:20)</button>
+    </div>
+    <div>
+      <button class="jump-button" onclick="jumpTo(129)">第二堂(2:09)</button>
+    </div>
+  </div>
+</body>
+
+</html>
+<style>
+  .jump-button {
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+  }
+
+  .jump-button:hover {
+    color: blue;
+  }
+
+  .shaka-controls-container .shaka-overflow-menu {
+    top: auto;
+    /* 如果想調整清單的垂直位置，這是控制項 */
+    left: auto;
+    /* 調整清單的水平位置 */
+  }
+</style>
